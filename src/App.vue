@@ -48,7 +48,7 @@ onMounted(() => {
   </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .container {
   height: 100%;
   display: flex;
