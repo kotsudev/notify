@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
+import Sidebar from "@/components/Sidebar/Sidebar.vue";
 
 const container = ref();
 const splitter = ref();
@@ -42,7 +43,9 @@ onMounted(() => {
 
 <template>
   <div class="container" ref="container">
-    <div class="pane" ref="leftPane"></div>
+    <div class="pane" ref="leftPane">
+      <Sidebar />
+    </div>
     <div class="splitter" ref="splitter" />
     <div class="pane" ref="rightPane"></div>
   </div>
