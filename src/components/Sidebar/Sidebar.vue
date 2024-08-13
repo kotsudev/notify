@@ -1,8 +1,10 @@
 <script setup lang="ts">
+import SidebarHeader from "@/components/Sidebar/SidebarHeader.vue";
 </script>
 
 <template>
   <div class="sidebar">
+    <SidebarHeader />
   </div>
 </template>
 
