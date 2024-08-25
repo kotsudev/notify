@@ -37,11 +37,6 @@ const btnClass = computed(() => ({
     border-color: transparent;
     background-color: rgba(255, 255, 255, 0.15);
   }
-
-  &:focus,
-  &:focus-visible {
-    outline: thin solid rgba(255, 255, 255, 0.15);
-  }
 }
 
 .inline {
