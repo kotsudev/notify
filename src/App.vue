@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import Sidebar from "@/components/Sidebar/Sidebar.vue";
+import Viewer from "@/components/Viewer/Viewer.vue";
 
 const container = ref();
 const splitter = ref();
@@ -47,7 +48,9 @@ onMounted(() => {
       <Sidebar />
     </div>
     <div class="splitter" ref="splitter" />
-    <div class="pane" ref="rightPane"></div>
+    <div class="pane" ref="rightPane">
+      <Viewer />
+    </div>
   </div>
 </template>
 
@@ -62,8 +65,11 @@ onMounted(() => {
 .pane {
   background-color: rgba(255, 255, 255, 0.4);
   width: 50%;
-  height: 100%;
+  height: -webkit-fill-available;
   border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
 }
 
 .splitter {
