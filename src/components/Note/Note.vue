@@ -1,4 +1,6 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import CheckIcon from "@/icons/CheckIcon.vue";
+</script>
 
 <template>
   <div class="note">
@@ -11,25 +13,30 @@
         sapiente possimus!
       </div>
     </div>
-    <div class="status">Done</div>
+    <div class="status"><CheckIcon /></div>
   </div>
 </template>
 
 <style lang="scss" scoped>
 .note {
+  cursor: default;
   display: flex;
-  padding: 16px;
+  padding: 8px 16px;
   justify-content: space-between;
   align-items: center;
-  border-radius: 16px;
-  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
   color: #000;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+  }
 }
 
 .info {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: calc(100% - 60px);
 }
 
 .title {
@@ -53,7 +60,6 @@
   line-height: 1.25rem; /* 20px */
   overflow: hidden;
   white-space: nowrap;
-  max-width: 300px;
   text-overflow: ellipsis;
 }
 </style>
