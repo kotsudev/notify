@@ -11,11 +11,17 @@ import Note from "@/components/Note/Note.vue";
   <div class="scroll-wrapper">
     <div class="notes">
       <Note />
+      <div class="divider" />
       <Note />
+      <div class="divider" />
       <Note />
+      <div class="divider" />
       <Note />
+      <div class="divider" />
       <Note />
+      <div class="divider" />
       <Note />
+      <div class="divider" />
       <Note />
     </div>
   </div>
@@ -27,7 +33,14 @@ import Note from "@/components/Note/Note.vue";
   font-size: 12px;
   font-weight: 300;
   text-align: center;
-  margin: 9px 0 18px;
+  margin: 9px 0 9px;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
 }
 
 .scroll-wrapper {
