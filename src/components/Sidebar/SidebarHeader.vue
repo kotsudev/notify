@@ -4,9 +4,9 @@ import Button from "@/components/shared/Button/Button.vue";
 
 <template>
   <div class="sidebar-header">
-    <Button>Edit</Button>
+    <Button class="action-btn" type="hover">Edit</Button>
     <span class="counter">7 items</span>
-    <Button>New</Button>
+    <Button class="action-btn" type="hover">New</Button>
   </div>
 </template>
 
@@ -18,9 +18,15 @@ import Button from "@/components/shared/Button/Button.vue";
   margin-bottom: 1rem;
 }
 
+.action-btn {
+  min-height: 46px;
+}
+
 .counter {
-  color: #000;
-  font-size: 14px;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: rgba(0, 0, 0, 0.4);
   cursor: default;
+  font-weight: 600;
 }
 </style>
