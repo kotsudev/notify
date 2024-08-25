@@ -15,6 +15,7 @@ import Button from "@/components/shared/Button/Button.vue";
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 1rem;
 }
 
 .counter {
