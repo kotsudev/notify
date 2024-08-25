@@ -24,6 +24,9 @@ const btnClass = computed(() => ({
 
 <style lang="scss" scoped>
 .btn {
+  height: 100%;
+  display: flex;
+  align-items: center;
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.5em 1em;
@@ -32,19 +35,22 @@ const btnClass = computed(() => ({
   cursor: pointer;
   background-color: transparent;
   color: #000;
-
-  &:hover {
-    border-color: transparent;
-    background-color: rgba(255, 255, 255, 0.15);
-  }
+  font-weight: 700;
 }
 
 .inline {
   padding: 0.2em;
-  font-weight: 700;
   &:hover {
     border-color: transparent;
     background-color: transparent;
+  }
+}
+
+.hover {
+  padding: 6px;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.15);
   }
 }
 </style>
