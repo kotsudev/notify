@@ -24,9 +24,11 @@ onMounted(() => {
     const offset = e.clientX - containerRect.left;
     const totalWidth = containerRect.width;
     const WIDTH_THRESHOLD = 320;
+    const PADDING_OFFSET = 32;
 
-    const leftWidth = offset;
-    const rightWidth = totalWidth - offset - splitter.value.offsetWidth;
+    const leftWidth = offset - PADDING_OFFSET;
+    const rightWidth =
+      totalWidth - offset - splitter.value.offsetWidth - PADDING_OFFSET;
 
     if (leftWidth <= WIDTH_THRESHOLD || rightWidth <= WIDTH_THRESHOLD) return;
 
@@ -64,12 +66,16 @@ onMounted(() => {
 
 .pane {
   background-color: rgba(255, 255, 255, 0.4);
-  width: 50%;
+  width: 100%;
   height: -webkit-fill-available;
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
   padding: 1rem;
+
+  &:first-child {
+    width: 320px;
+  }
 }
 
 .splitter {
