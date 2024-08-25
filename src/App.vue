@@ -9,7 +9,8 @@ const rightPane = ref();
 const isDragging = ref(false);
 
 onMounted(() => {
-  splitter.value.addEventListener("mousedown", () => {
+  splitter.value.addEventListener("mousedown", (e: MouseEvent) => {
+    e.preventDefault();
     isDragging.value = true;
     document.addEventListener("mousemove", onMouseMove);
     document.addEventListener("mouseup", onMouseUp);
@@ -21,7 +22,6 @@ onMounted(() => {
     const containerRect = container.value.getBoundingClientRect();
     const offset = e.clientX - containerRect.left;
     const totalWidth = containerRect.width;
-    const PADDING_OFFSET = 12;
     const WIDTH_THRESHOLD = 320;
 
     const leftWidth = offset;
@@ -30,7 +30,7 @@ onMounted(() => {
     if (leftWidth <= WIDTH_THRESHOLD || rightWidth <= WIDTH_THRESHOLD) return;
 
     leftPane.value.style.width = `${leftWidth}px`;
-    rightPane.value.style.width = `${rightWidth - PADDING_OFFSET}px`;
+    rightPane.value.style.width = `${rightWidth}px`;
   }
 
   function onMouseUp() {
@@ -56,7 +56,7 @@ onMounted(() => {
   height: 100%;
   display: flex;
   align-items: center;
-  gap: 6px;
+  justify-content: space-between;
 }
 
 .pane {
@@ -67,10 +67,26 @@ onMounted(() => {
 }
 
 .splitter {
-  background-color: rgba(255, 255, 255, 0.4);
   cursor: ew-resize;
-  height: 60px;
-  width: 4px;
+  height: calc(100% - 1.7rem);
   border-radius: 2px;
+  padding: 0 4px;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    opacity: 0;
+    width: 2px;
+    height: 30%;
+    background-color: rgba(255, 255, 255, 0.4);
+  }
 }
 </style>
